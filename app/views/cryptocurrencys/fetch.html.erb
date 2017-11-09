@@ -1,0 +1,7 @@
+<h1>Cryptocurrencys#fetch</h1>
+<p>Find me in app/views/cryptocurrencys/fetch.html.erb</p>
+<%= button_to "Fetch Data", fetch_path(name: 'btc'), :class => "button medium", :method => :get %>
+<h2><%= @name %><h2>
+<p>Market Cap: $<%= @marketcap %><p>
+<p>24 HR Volume: $<%= @volume %><p>
+<p>Price: $<%= @price %><p>
