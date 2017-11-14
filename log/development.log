@@ -97,3 +97,639 @@ Completed 500 Internal Server Error in 29ms (ActiveRecord: 4.5ms)
 NoMethodError (undefined method `name' for nil:NilClass):
   
 app/controllers/cryptocurrencys_controller.rb:4:in `fetch'
+Started GET "/" for 127.0.0.1 at 2017-11-13 17:02:27 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/avneesh1mehta/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/avneesh1mehta/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (5.5ms)
+Completed 200 OK in 33ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:02:34 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.7ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 2.2ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/cryptocurrencys_controller.rb:4:in `fetch'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "cryptocurrencies"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "cryptocurrencies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "marketcap" float, "price" float, "volume" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171109223110)[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171109193756),
+(20171109200330);
+
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-14 01:03:06.434341"], ["updated_at", "2017-11-14 01:03:06.434341"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "cryptocurrencies"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "cryptocurrencies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "marketcap" float, "price" float, "volume" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171109223110)[0m
+  [1m[35m (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171109193756),
+(20171109200330);
+
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-14 01:03:06.464309"], ["updated_at", "2017-11-14 01:03:06.464309"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cryptocurrencies" ("marketcap", "price", "volume", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?)[0m  [["marketcap", 0.0], ["price", 0.0], ["volume", 0.0], ["created_at", "2017-11-14 01:03:06.502627"], ["updated_at", "2017-11-14 01:03:06.502627"], ["name", "btc"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cryptocurrencies" ("marketcap", "price", "volume", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?)[0m  [["marketcap", 0.0], ["price", 0.0], ["volume", 0.0], ["created_at", "2017-11-14 01:03:06.506916"], ["updated_at", "2017-11-14 01:03:06.506916"], ["name", "eth"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:03:36 -0800
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.5ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 2.9ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/cryptocurrencys_controller.rb:13:in `[]'
+app/controllers/cryptocurrencys_controller.rb:13:in `fetch'
+  [1m[36mCryptocurrency Load (1.8ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:06:18 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 3.8ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/cryptocurrencys_controller.rb:13:in `[]'
+app/controllers/cryptocurrencys_controller.rb:13:in `fetch'
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:07:15 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.4ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 1.8ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/cryptocurrencys_controller.rb:13:in `[]'
+app/controllers/cryptocurrencys_controller.rb:13:in `fetch'
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:09:38 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "cryptocurrencies" SET "marketcap" = ?, "price" = ?, "volume" = ?, "updated_at" = ? WHERE "cryptocurrencies"."id" = ?[0m  [["marketcap", 111929571352.0], ["price", 6711.1], ["volume", 6178440000.0], ["updated_at", "2017-11-14 01:09:38.532353"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1244ms (Views: 1126.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:11:53 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "cryptocurrencies" SET "marketcap" = ?, "price" = ?, "volume" = ?, "updated_at" = ? WHERE "cryptocurrencies"."id" = ?[0m  [["marketcap", 110525594163.0], ["price", 6626.92], ["volume", 6183480000.0], ["updated_at", "2017-11-14 01:11:53.795639"], ["id", 1]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 215ms (Views: 58.0ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:11:59 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 128ms (Views: 43.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:01 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.4ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 117ms (Views: 25.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:02 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 120ms (Views: 30.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:05 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 109ms (Views: 25.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:06 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 116ms (Views: 23.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:27 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 113ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:27 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 91ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:27 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 91ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:27 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 84ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:27 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 86ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:27 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 83ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:27 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 84ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:27 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 84ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:28 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 83ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:28 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 79ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:28 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 88ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:28 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 83ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:28 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 80ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:28 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 89ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:28 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 84ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:28 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 136ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:28 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 84ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:28 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 82ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:29 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 91ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:29 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 80ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:29 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 82ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:29 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 86ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:29 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 80ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:29 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 84ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:29 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 85ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:29 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 75ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:29 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 79ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:30 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 80ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:30 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 90ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:30 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 78ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:30 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 84ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:30 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 95ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:30 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 84ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:30 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 89ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:30 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 84ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:30 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 80ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:30 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 84ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:31 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 82ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:31 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 79ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:31 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.1ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 75ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:31 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 78ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:31 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cryptocurrencys/fetch
+Completed 302 Found in 82ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:41 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 153ms (Views: 50.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:45 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 129ms (Views: 43.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:46 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 145ms (Views: 53.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:51 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.3ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 140ms (Views: 49.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:54 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.4ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 132ms (Views: 43.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:12:56 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 129ms (Views: 38.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:13:01 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.2ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 130ms (Views: 38.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cryptocurrencys/fetch" for 127.0.0.1 at 2017-11-13 17:13:03 -0800
+Processing by CryptocurrencysController#fetch as HTML
+  [1m[36mCryptocurrency Load (0.4ms)[0m  [1m[34mSELECT  "cryptocurrencies".* FROM "cryptocurrencies" WHERE "cryptocurrencies"."name" = ? LIMIT ?[0m  [["name", "btc"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering cryptocurrencys/fetch.html.erb within layouts/application
+  Rendered cryptocurrencys/fetch.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 116ms (Views: 34.1ms | ActiveRecord: 0.6ms)
+
+
