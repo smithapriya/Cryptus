@@ -1,7 +1,19 @@
 <h1>Cryptocurrencys#fetch</h1>
+
 <p>Find me in app/views/cryptocurrencys/fetch.html.erb</p>
-<%= button_to "Fetch Data", fetch_path(name: 'btc'), :class => "button medium", :method => :get %>
+
+<!-- Link to refresh the page. -->
+
+<a href="history.go(0)"> Refresh to Refetch Data </a>
+
+<!-- Button to refresh the page. -->
+
+<form>
+    <input type="button" onclick="history.go(0)" value="Refresh to Refetch Data">
+</form>
+
 <h2><%= @name %><h2>
+
 <p>Market Cap: $<%= @marketcap %><p>
 <p>24 HR Volume: $<%= @volume %><p>
 <p>Price: $<%= @price %><p>
