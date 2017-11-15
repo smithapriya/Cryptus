@@ -1,0 +1,23 @@
+<h2> Cryptocurrency Market Data </h2>
+
+<hr>
+
+<h3> <%= @name %> </h3>
+
+<hr>
+
+<p> Market Cap: $<%= @marketcap %> <p>
+<p> 24 HR Volume: $<%= @volume %> <p>
+<p> Price: $<%= @price %> <p>
+
+<hr>
+
+<!-- Link to refresh the page. -->
+<!-- <a href="javascript:history.go(0)"> Refresh to Refetch Data </a> -->
+
+<!-- Button to refresh the page. -->
+<form>
+    <input type="button" onclick="history.go(0)" value="Refresh to Refetch Data">
+</form>
+
+<hr>

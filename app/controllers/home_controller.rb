@@ -1,6 +1,9 @@
-class CryptocurrencysController < ApplicationController
+class HomeController < ApplicationController
+  def index
+    fetch
+  end
   def fetch
-    cryptocurrency = Cryptocurrency.find_by name: 'btc'
+    cryptocurrency = Cryptocurrency.find_by name: "btc"
     if cryptocurrency.name == "btc"
       response = Faraday.get "https://api.coinmarketcap.com/v1/ticker/bitcoin/"
       response = JSON.parse(response.body)[0]

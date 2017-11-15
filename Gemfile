@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'faraday', '~> 0.13.1'
 gem 'json', '~> 2.1.0'
+gem 'devise'
