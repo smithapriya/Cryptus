@@ -1,2 +1,5 @@
 <h2> User </h2>
-<p>Email: <%= current_user.email if current_user.email %></p>
+<p>Email: <%= @user.email if @user.email %></p>
+<p>Name: <%= @user.name if @user.name %></p>
+<p>Description: <%= @user.description if @user.description %></p>
+<%= link_to "Back", root_path %>
