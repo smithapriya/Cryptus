@@ -1,4 +1,6 @@
-<h2>Resend unlock instructions</h2>
+<div class="text-center"><h2>Resend unlock instructions</h2></div>
+<div class="col-lg-5"></div>
+<div class="col-lg-2">
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -14,3 +16,4 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+</div><div class="col-lg-5"></div>

@@ -1,33 +1,29 @@
-<h2> Cryptocurrency Market Data </h2>
-
-<hr>
-
-<h3> <%= @bname %> </h3>
-
-<hr>
-
-<p> Market Cap: $<%= @bmarketcap %> <p>
-<p> 24 HR Volume: $<%= @bvolume %> <p>
-<p> Price: $<%= @bprice %> <p>
-
-<hr>
-
-<h3> <%= @ename %> </h3>
-
-<hr>
-
-<p> Market Cap: $<%= @emarketcap %> <p>
-<p> 24 HR Volume: $<%= @evolume %> <p>
-<p> Price: $<%= @eprice %> <p>
-
-<hr>
-
-<!-- Link to refresh the page. -->
-<!-- <a href="javascript:history.go(0)"> Refresh to Refetch Data </a> -->
-
+<div class="row text-center">
+  <h2>Market Stats</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><%= @bname %></th>
+        <th><%= @ename %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Market Cap: $<%= @bmarketcap %></td>
+        <td>Market Cap: $<%= @emarketcap %></td>
+      </tr>
+      <tr>
+        <td>24 HR Volume: $<%= @bvolume %></td>
+        <td>24 HR Volume: $<%= @evolume %></td>
+      </tr>
+      <tr>
+        <td>Price: $<%= @bprice %></td>
+        <td>Price: $<%= @eprice %></td>
+      </tr>
+    </tbody>
+  </table>
 <!-- Button to refresh the page. -->
-<form>
-    <input type="button" onclick="history.go(0)" value="Refresh to Refetch Data">
-</form>
-
-<hr>
+  <form>
+      <input type="button" onclick="history.go(0)" value="Refetch Data">
+  </form>
+</div>

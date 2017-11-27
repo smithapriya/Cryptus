@@ -207,7 +207,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-  devise
+  devise (~> 4.3.0)
   faraday (~> 0.13.1)
   jbuilder (~> 2.5)
   jquery-rails

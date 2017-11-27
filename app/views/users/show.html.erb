@@ -1,5 +1,12 @@
-<h2> User </h2>
-<p>Email: <%= @user.email if @user.email %></p>
-<p>Name: <%= @user.name if @user.name %></p>
-<p>Description: <%= @user.description if @user.description %></p>
+<div class="text-center"><h2>My Profile</h2></div>
+<div class="col-lg-5"></div>
+<div class="col-lg-2">
+<hr>
+<h3>Email</h3>
+<p><%= @user.email if @user.email %></p>
+<h3>Name</h3>
+<p><%= @user.name if @user.name %></p>
+<h3>Description</h3>
+<p><%= @user.description if @user.description %></p>
 <%= link_to "Back", root_path %>
+</div><div class="col-lg-5"></div>

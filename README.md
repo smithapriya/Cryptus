@@ -2,7 +2,7 @@
 
 ## Project Information
 
-**Title:** TBD
+**Title:** Cryptus
 
 **Team Member:** Shein Lin Phyo, Avneesh Mehta, Smitha Priya, Emma Jiayue Tao
 
@@ -15,11 +15,14 @@
 ## Models and Descriptions
 
 1. Cryptocurrency
-    *
-    *
+    * Gathers info about Bitcoin and Ethereum using CoinMarketCap API
+    * Uses Faraday to
     *
 2. User
+    * has many posts
+    * can create or delete posts
 3. Post
+    * belongs to a user
 
 ---
 
@@ -38,10 +41,10 @@
 
 ## Division of Labor
 
-* **Shein Lin Phyo:** User Model, Writeup
-* **Avneesh Mehta:** Crypto APIs, UI, Presentation
-* **Smitha Priya:** Post Feature
-* **Emma Jiayue Tao:** User Model, Post Feature
+* **Shein Lin Phyo:** User MVC, Writeup
+* **Avneesh Mehta:** Crypto MVC, Bootstrap, Presentation
+* **Smitha Priya:** Post MVC
+* **Emma Jiayue Tao:** User MVC, Crypto View, Post MVC
 
 ---
 
