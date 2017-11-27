@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116010925) do
+ActiveRecord::Schema.define(version: 20171127044348) do
 
   create_table "cryptocurrencies", force: :cascade do |t|
     t.float "marketcap"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20171116010925) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "content"
+    t.boolean "btc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
