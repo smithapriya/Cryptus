@@ -16,26 +16,25 @@
 
 1. Cryptocurrency
     * Gathers info about Bitcoin and Ethereum using CoinMarketCap API
-    * Uses Faraday to
+    * Uses [Faraday](https://github.com/lostisland/faraday) to retrieve API data from [CoinMarketCap](https://coinmarketcap.com/api)
     *
 2. User
-    * has many posts
+    * has email, password, and posts
     * can create or delete posts
+    * can accept sale (express interest in another post)
 3. Post
     * belongs to a user
+    * can be deleted by a user
 
 ---
 
 ## Features
 
-1. On homepage, the user can:
-    * check market information for Bitcoin and Ethereum.
-    * log in or sign up for a user account. (a user account is needed to access pages other than home page. Upon logging in, user will be redirected back to home page.)
-2. After logging in, the user is redirected to the homepage where the user can also:
-    * go to Cryptus marketplace page to shop for cryptocurrency.
-    * create a sale post.
-    * edit own profile.
-    * view own profile.
+1. Users can sign up/login
+2. Users can see market information for Bitcoin and Ethereum.
+3. Users can create a sale post.
+4. Users can indicate interest in another sale post
+5. Users can view/edit their profile.
 
 ---
 
@@ -45,32 +44,3 @@
 * **Avneesh Mehta:** Crypto MVC, Bootstrap, Presentation
 * **Smitha Priya:** Post MVC
 * **Emma Jiayue Tao:** User MVC, Crypto View, Post MVC
-
----
-
-# To Be Sorted...
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
----
