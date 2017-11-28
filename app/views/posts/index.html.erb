@@ -6,7 +6,7 @@
   <div class="well well-lg">
     <!-- <h2><%= link_to post.content, post_path(post) %></h2> -->
     <p>Title: <%= post.content%> </p>
-    <% if post.btc %>
+    <% if post.btc == true %>
     	<p>Type: Bitcoin</p>
     <% else %>
     	<p>Type: Ethereum</p>

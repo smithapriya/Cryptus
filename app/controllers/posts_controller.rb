@@ -10,14 +10,13 @@ class PostsController < ApplicationController
   end
 
   def create
-  	if params[:btc] = "true"
+  	if params[:post][:btc] == "true"
 			btc_param = true
   	else
   		btc_param = false
 		end
-    @post = Post.new(content: "temp", quantity: params[:quantity].to_i, price: params[:price].to_i, btc: btc_param)
+    @post = Post.new(content: params[:post][:content], quantity: params[:post][:quantity].to_i, price: params[:post][:price].to_i, btc: btc_param)
     @post.user_id = current_user.id
-		@post.save!
     if @post.save!
     	redirect_to posts_path
     else
