@@ -10,20 +10,16 @@ class PostsController < ApplicationController
   end
 
   def create
- #  	case params[:btc]
- #  	when 'bitcoin'
- #  		params[:btc] = 'true'
- #  	when 'ethereum'
-	# 	params[:btc] = 'false'
-	# end
-  	
-    @post = Post.new(content: params[:content], quantity: params[:quantity], price: params[:price], btc: true)
-    #@post = Post.new(post_params)
-    @post.save
-    #@post.user_id = current_user.id
-    if @post.save
-    	#@post.save
-    	redirect_to posts_path()
+  	if params[:btc] = "true"
+			btc_param = true
+  	else
+  		btc_param = false
+		end
+    @post = Post.new(content: "temp", quantity: params[:quantity].to_i, price: params[:price].to_i, btc: btc_param)
+    @post.user_id = current_user.id
+		@post.save!
+    if @post.save!
+    	redirect_to posts_path
     else
       render 'new'
     end
