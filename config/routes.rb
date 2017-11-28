@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   root "home#index"
   resources :users
   get "users/:name", to: "users#show", as: "profile"
-  #get "profile" => redirect("users/show")
-  get "*path" => redirect("/")
+  
+  resources :posts
+  get '/posts', to: 'posts#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

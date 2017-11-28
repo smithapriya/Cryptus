@@ -8,5 +8,11 @@
 <p><%= @user.name if @user.name %></p>
 <h3>Description</h3>
 <p><%= @user.description if @user.description %></p>
+<h3>Posts</h3>
+<% @user.posts.each do |post| %>
+    <p><%= post.content %></p>
+    <p>Price: <%= post.price %></p>
+    <p>Quantity: <%= post.quantity %></p>
+	<% end %>
 <%= link_to "Back", root_path %>
 </div><div class="col-lg-5"></div>
