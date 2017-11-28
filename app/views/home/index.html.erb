@@ -1,10 +1,10 @@
 <div class="row text-center">
   <h2>Market Stats</h2>
-  <table class="table table-bordered">
+  <table class="table table-bordered table-hover">
     <thead>
       <tr>
-        <th><%= @bname %></th>
-        <th><%= @ename %></th>
+        <th class="text-center"><%= @bname %></th>
+        <th class="text-center"><%= @ename %></th>
       </tr>
     </thead>
     <tbody>
@@ -23,7 +23,11 @@
     </tbody>
   </table>
 <!-- Button to refresh the page. -->
-  <form>
+<!-- Use below for plain JS. -->
+  <!-- <form class="btn btn-block">
       <input type="button" onclick="history.go(0)" value="Refetch Data">
-  </form>
+  </form> -->
+  <p><%= link_to "Refresh Market Data", root_path, class: 'btn btn-success btn-large' %></p>
 </div>
+
+<hr>
