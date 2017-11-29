@@ -21,6 +21,7 @@
 2. User
     * has attributes from devise gem as well as name and description
     * can create/delete/edit posts
+    * has many posts
 3. Post
     * has btc (boolean for telling if currency is bitcoin or ethereum), price, quantity, content, user_id foreign key
     * belongs to a user
