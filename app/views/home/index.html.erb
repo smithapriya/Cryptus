@@ -3,22 +3,34 @@
   <table class="table table-bordered table-hover">
     <thead>
       <tr>
+        <th class="text-center">CryptoCurrency</th>
         <th class="text-center"><%= @bname %></th>
         <th class="text-center"><%= @ename %></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Market Cap: $<%= @bmarketcap %></td>
-        <td>Market Cap: $<%= @emarketcap %></td>
+        <td>Market Cap</td>
+        <td>$<%= number_with_delimiter(@bmarketcap, :delimiter => ',') %></td>
+        <td>$<%= number_with_delimiter(@emarketcap, :delimiter => ',') %></td>
       </tr>
       <tr>
-        <td>24 HR Volume: $<%= @bvolume %></td>
-        <td>24 HR Volume: $<%= @evolume %></td>
+        <td>24-Hour Volume</td>
+        <td>$<%= number_with_delimiter(@bvolume, :delimiter => ',') %></td>
+        <td>$<%= number_with_delimiter(@evolume, :delimiter => ',') %></td>
       </tr>
       <tr>
-        <td>Price: $<%= @bprice %></td>
-        <td>Price: $<%= @eprice %></td>
+        <td>Price</td>
+        <% if @bchange > 0 %>
+          <td><font color="#2cf400">$<%= number_with_delimiter(@bprice, :delimiter => ',') %></font></td>
+        <% else %>
+          <td><font color="#f40000">$<%= number_with_delimiter(@bprice, :delimiter => ',') %></font></td>
+        <% end %>
+        <% if @echange > 0 %>
+          <td><font color="#2cf400">$<%= number_with_delimiter(@eprice, :delimiter => ',') %></font></td>
+        <% else %>
+          <td><font color="#f40000">$<%= number_with_delimiter(@eprice, :delimiter => ',') %></font></td>
+        <% end %>
       </tr>
     </tbody>
   </table>
@@ -27,7 +39,5 @@
   <!-- <form class="btn btn-block">
       <input type="button" onclick="history.go(0)" value="Refetch Data">
   </form> -->
-  <p><%= link_to "Refresh Market Data", root_path, class: 'btn btn-success btn-large' %></p>
+  <p><%= link_to "Refresh Market Data", root_path, class: 'btn btn-primary btn-large' %></p>
 </div>
-
-<hr>

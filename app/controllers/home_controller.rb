@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
     fetch
   end
-  
+
   def fetch
     bitcoin = Cryptocurrency.find_by name: "btc"
     response = Faraday.get "https://api.coinmarketcap.com/v1/ticker/bitcoin/"
@@ -12,6 +12,7 @@ class HomeController < ApplicationController
     @bprice = response["price_usd"].to_f
     @bmarketcap = response["market_cap_usd"].to_f
     @bvolume = response["24h_volume_usd"].to_f
+    @bchange = response["percent_change_1h"].to_f
     bitcoin.update(marketcap: @bmarketcap, price: @bprice, volume: @bvolume)
 
     ethereum = Cryptocurrency.find_by name: "eth"
@@ -21,6 +22,7 @@ class HomeController < ApplicationController
     @eprice = response["price_usd"].to_f
     @emarketcap = response["market_cap_usd"].to_f
     @evolume = response["24h_volume_usd"].to_f
+    @echange = response["percent_change_1h"].to_f
     ethereum.update(marketcap: @emarketcap, price: @eprice, volume: @evolume)
   end
 end

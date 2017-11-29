@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <style>
+      .pad {padding-top: 20px;}
+    </style>
     <!-- Needed for Devise Gem. -->
     <% if notice %>
       <p><%= notice %></p>
@@ -21,24 +24,21 @@
       <p><%= alert %></p>
     <% end %>
 
-    <hr>
-
-    <div class="container text-right">
+    <div class="container text-right pad">
       <p>
+        <%= link_to 'Home', root_path, :class => 'navbar-link' %> |
         <% if user_signed_in? %>
-          |   Logged in as <strong><%= link_to "#{current_user.email}", profile_path(current_user), :class => 'user navbar-link' %></strong>.  |
+            Logged in as <strong><%= link_to "#{current_user.email}", profile_path(current_user), :class => 'user navbar-link' %></strong>.  |
           <%= link_to 'Cryptus Marketplace', posts_path, :class => 'navbar-link' %>   |
-          <%= link_to 'My profile', profile_path(current_user), :class => 'user navbar-link text-success' %>   |
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link text-warning' %>   |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link text-danger' %>   |
+          <%= link_to 'My profile', profile_path(current_user), :class => 'user navbar-link' %>   |
+          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>   |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
         <% else %>
-          |   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>   |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>   |
+          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>   |
+          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
         <% end %>
       </p>
     </div>
-
-    <hr>
 
     <div class="btn btn-block">
       <h1><%= link_to "Cryptus", root_path %></h1>

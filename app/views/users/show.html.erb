@@ -1,10 +1,6 @@
 <h2> <%= @user.name %>'s Profile</h2>
 
-<hr>
-
-<h3>Account Information</h3>
-
-<table class="table table-bordered table-hover text-center">
+<table class="table table-bordered table-hover text-center pad">
   <tbody>
     <tr>
       <td><strong>Email</strong></td>
@@ -20,33 +16,27 @@
     </tr>
   </tbody>
 </table>
-
-<hr>
-
 <h3><%= @user.name %>'s Sale Posts</h3>
+<div class="pad">
+  <% @user.posts.each do |post| %>
+    <div class="well well-lg pad">
+      <p>Title: <%= post.content%> </p>
+      <% if post.btc == true %>
+      	<p>Type: Bitcoin</p>
+      <% else %>
+      	<p>Type: Ethereum</p>
+      	<% end %>
+      <p>Quantity: <%= post.quantity %></p>
+      <p>Price: <%= post.price %></p>
 
-<% @user.posts.each do |post| %>
-  <div class="well well-lg">
-    <p>Title: <%= post.content%> </p>
-    <% if post.btc == true %>
-    	<p>Type: Bitcoin</p>
-    <% else %>
-    	<p>Type: Ethereum</p>
-    	<% end %>
-    <p>Quantity: <%= post.quantity %></p>
-    <p>Price: <%= post.price %></p>
-
-    <% if post.user_id == current_user.id %>
-      <div class="btn-group">
-        <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-info' %>
-        <%= link_to 'Delete', post_path(post), data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger' %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
-
-<hr>
+      <% if post.user_id == current_user.id %>
+        <div class="btn-group">
+          <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-info' %>
+          <%= link_to 'Delete', post_path(post), data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger' %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
 <p><%= link_to "Back To Home Page", root_path, class: "btn btn-primary btn-large" %></p>
-
-<hr>

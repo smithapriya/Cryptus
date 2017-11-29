@@ -1,13 +1,14 @@
 <h2> Cryptus Marketplace </h2>
 
-<hr>
+<div class="pad">
+  <p><%= link_to 'New Post', new_post_path, class: 'btn btn-primary btn-large' %></p>
+</div>
 
-<hr>
-
+<div class="pad">
 <% @posts.each do |post| %>
-  <div class="well well-lg">
+  <div class="well well-lg pad">
     <!-- <h2><%= link_to post.content, post_path(post) %></h2> -->
-    <p>Title: <%= post.content%> </p>
+    <p>Description: <%= post.content%> </p>
     <% if post.btc == true %>
     	<p>Type: Bitcoin</p>
     <% else %>
@@ -28,9 +29,4 @@
     <% end %>
   </div>
 <% end %>
-
-<hr>
-
-<p><%= link_to 'Create a Post', new_post_path, class: 'btn btn-primary btn-large' %></p>
-
-<hr>
+</div>
