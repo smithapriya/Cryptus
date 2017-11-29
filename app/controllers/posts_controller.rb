@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   	else
   		btc_param = false
 		end
-    @post = Post.new(content: params[:post][:content], quantity: params[:post][:quantity].to_i, price: params[:post][:price].to_i, btc: btc_param)
+    @post = Post.new(content: params[:post][:content], quantity: params[:post][:quantity].to_f, price: params[:post][:price].to_f, btc: btc_param)
     @post.user_id = current_user.id
     if @post.save!
     	redirect_to posts_path

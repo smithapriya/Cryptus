@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171128061149) do
+ActiveRecord::Schema.define(version: 20171129072815) do
 
   create_table "cryptocurrencies", force: :cascade do |t|
     t.float "marketcap"
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20171128061149) do
     t.boolean "btc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.float "price"
     t.float "quantity"
-    t.integer "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
