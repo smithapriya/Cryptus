@@ -44,6 +44,6 @@
 ## Division of Labor
 
 * **Shein Lin Phyo:** User MVC, Writeup, Misc.
-* **Avneesh Mehta:** Crypto MVC, Bootstrap Styling, Misc.
+* **Avneesh Mehta:** Crypto MVC, Bootstrap Styling, Seed file, Misc.
 * **Smitha Priya:** Post MVC (Work committed through Emma's github account), Presentation
 * **Emma Jiayue Tao:** User MVC, Crypto View, Post MVC
