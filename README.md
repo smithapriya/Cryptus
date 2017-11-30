@@ -7,6 +7,7 @@
 **Team Member:** Shein Lin Phyo, Avneesh Mehta, Smitha Priya, Emma Jiayue Tao
 
 **Demo Link:** https://youtu.be/FBguLgvsst8
+**Heroku Permalink:** https://sleepy-plains-94118.herokuapp.com/
 
 **Idea:** Application where cryptocurrency owners (users) can find and post Bitcoin or Ethereum sales at their desired price and amount. Users can use this platform to find and contact sellers and buyers as well as check the current market value of Bitcoin and Ethereum.
 
