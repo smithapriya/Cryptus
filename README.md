@@ -4,8 +4,6 @@
 
 **Title:** Cryptus
 
-**Team Member:** Shein Lin Phyo, Avneesh Mehta, Smitha Priya, Emma Jiayue Tao
-
 **Demo Link:** https://youtu.be/FBguLgvsst8
 
 **Heroku Permalink:** https://sleepy-plains-94118.herokuapp.com/
